@@ -1,0 +1,10 @@
+I = imread('Image_3.bmp');
+figure;
+subplot(121);
+imshow(I);
+title('Orignal Image');
+se = strel('disk',10);
+I = imclose(I,se);
+subplot(122);
+imshow(I);
+title('Closed image');

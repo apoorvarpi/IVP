@@ -1,0 +1,28 @@
+I = imread('Image_2.bmp');
+J = I;
+figure;
+subplot(221);
+imshow(I);
+title('1:Original image');
+%steps to follow negative, erosion, dialation, negative
+I = ~I;
+subplot(222);
+imshow(I);
+title('2:Inverted image 1');
+se = strel('square',5);
+I = imerode(I,se);
+subplot(223);
+imshow(I);
+title('3:Eroded image 2');
+I = imdilate(I,se);
+subplot(224);
+imshow(I);
+title('4:Dialated image 3');
+I = ~I;
+figure;
+subplot(121);
+imshow(J);
+title('Original Image');
+subplot(122);
+imshow(I);
+title('Image after noise removal');

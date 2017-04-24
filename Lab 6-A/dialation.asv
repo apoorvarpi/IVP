@@ -1,0 +1,22 @@
+A=imread('Image_1.bmp');
+figure;
+subplot(131);
+imshow(A);
+%Structuring element
+B=[1 1 1 1 1; 1 1 1 1 1; 1 1 1 1 1];
+%Pad zeros on all the sides
+C=padarray(A,[1 1]);
+%Intialize a matrix of matrix size A with zeros
+D=false(size(A));
+for i=1:size(C,1)-4
+    for j=1:size(C,2)-4
+        X = C(i:i+4, j:j+4);
+        for k=1:5
+            for l=1:5
+                
+    end
+end
+subplot(132);
+imshow(D);
+subplot(133);
+imshow(D-A);
